@@ -1,20 +1,26 @@
 # Image Asset Inventory (MDM Landing)
 
-Current page still uses local image files with these exact names. Replace each file in place to update branding quickly.
+Current page uses the images below with the exact filenames shown. Keep these files in place to match each section.
 
 ## Required replacements
 
 - `assets/images/Logo.jpg` — 1 file
-  - Shared brand asset for both nav/footer logo and browser tab favicon
+  - Shared brand asset for nav logo, footer logo, and favicon.
 
-- `funnel_mobile_assets/images/inline-image-01.jpg` — 1 file
-  - Founder / founder-style portrait in the lead proof card
+- `assets/images/Mani-Headshot.HEIC` — 1 file
+  - Founder hero card image.
 
-- `funnel_mobile_assets/images/inline-image-02.jpg` — 1 file
-  - Primary proof / dashboard image in lead proof card
+- `assets/images/Founder-Section-Dashboard.jpg` — 1 file
+  - Founder story side image/card proof.
 
-- `funnel_mobile_assets/images/user-testimonial-1.png` through `funnel_mobile_assets/images/user-testimonial-5.png` — 5 files
-  - Student proof gallery and testimonials from your latest uploads
+- `assets/images/Josep-Headshot.JPG` — 1 file
+  - VIP Coach profile card image.
+
+- `assets/images/VIP-Coach-Dashboard.JPG` — 1 file
+  - VIP Coach story proof image.
+
+- `funnel_mobile_assets/images/user-attachment-1.png` through `funnel_mobile_assets/images/user-attachment-5.png` — 5 files
+  - Student testimonial screenshots.
 
 ## Optional branding upgrades
 
@@ -24,7 +30,4 @@ Current page still uses local image files with these exact names. Replace each f
 
 ## Quick counts
 
-- Total local image files currently tracked: 14
-  - Required brand/proof files: 1
-  - Founder proof files: 2
-  - Student proof files: 5
+- Total local image files currently tracked for first-screen narrative and proofs: 10
