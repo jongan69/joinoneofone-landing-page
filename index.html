@@ -210,6 +210,12 @@ h1 .accent { color: var(--a); }
   flex-shrink: 0;
   border: 1px solid var(--border);
 }
+.esteban-photo-caption {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text2);
+  margin-top: 8px;
+}
 .esteban-photo img {
   width: 100%; height: 100%; object-fit: cover; display: block;
 }
@@ -243,6 +249,11 @@ h1 .accent { color: var(--a); }
   border: 1px solid var(--border);
   overflow: hidden;
   background: var(--surface2);
+}
+.esteban-proof-caption {
+  font-size: 12px;
+  color: var(--text2);
+  margin-top: 8px;
 }
 .esteban-proof img {
   width: 100%; height: auto; display: block;
@@ -426,10 +437,11 @@ footer {
   padding-bottom: env(safe-area-inset-bottom);
 }
 .footer-row {
-  max-width: 780px; margin: 0 auto;
+  width: 100%; max-width: none; margin: 0;
   padding: 32px 24px;
   display: flex; align-items: center; justify-content: space-between;
   gap: 20px;
+  box-sizing: border-box;
 }
 .footer-brand {
   display: flex; align-items: center; gap: 12px;
@@ -481,7 +493,7 @@ footer {
   .esteban-card { padding: 32px; }
   .esteban-body { grid-template-columns: 1fr; gap: 24px; }
   .guarantee-card { padding: 32px; }
-  .footer-row { 
+.footer-row { 
     flex-direction: column; gap: 16px; text-align: center; 
     padding: 32px 24px 40px;
   }
@@ -526,6 +538,7 @@ wistia-player { width: 100%; display: block; }
 <div class="esteban-head">
 <div class="esteban-photo">
 <img alt="Mani with Josep, founder-side profile" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-01.jpg"/>
+<p class="esteban-photo-caption">Mani | Founder of MDM</p>
 </div>
 <div class="esteban-name">Mani<svg aria-hidden="true" class="verified" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" fill="#1d9bf0" r="11"></circle><path d="M7.5 12.3l3 3 6-6" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
 </div>
@@ -537,6 +550,7 @@ wistia-player { width: 100%; display: block; }
 </div>
 <div class="esteban-proof">
 <img alt="Josep, top student" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-02.jpg"/>
+<p class="esteban-proof-caption">Josep | Top student</p>
 </div>
 </div>
 </div>
