@@ -4,13 +4,8 @@ Current page still uses local image files with these exact names. Replace each f
 
 ## Required replacements
 
-- `assets/images/logo.png` — 1 file
-  - Brand logo / lockup used in nav and footer
-  - Current dimensions: 2000 x 2000
-
-- `assets/images/favicon.png` — 1 file
-  - Browser tab favicon
-  - Current dimensions: 1024 x 1024
+- `assets/images/Logo.jpg` — 1 file
+  - Shared brand asset for both nav/footer logo and browser tab favicon
 
 - `funnel_mobile_assets/images/inline-image-01.jpg` — 1 file
   - Founder / founder-style portrait in the lead proof card
@@ -29,7 +24,7 @@ Current page still uses local image files with these exact names. Replace each f
 
 ## Quick counts
 
-- Total local image files currently tracked: 9
-  - Required brand/proof files: 2
+- Total local image files currently tracked: 14
+  - Required brand/proof files: 1
   - Founder proof files: 2
   - Student proof files: 5
