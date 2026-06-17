@@ -13,12 +13,14 @@
 <style>wistia-player[media-id='8ysornk98e']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/8ysornk98e/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style><style>wistia-player[media-id='3xbr43843t']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/3xbr43843t/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style><style>wistia-player[media-id='d93138w3dd']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/d93138w3dd/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style><style>wistia-player[media-id='bek46gug12']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/bek46gug12/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style><style>wistia-player[media-id='cr63294vmv']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/cr63294vmv/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; background: #1a1a18; }
+html { scroll-behavior: smooth; background: #0f172a; }
 #apply { scroll-margin-top: 100px; }
 
 body {
-  background: #f7f6f3;
-  color: #1a1a18;
+  background:
+    radial-gradient(120% 90% at 50% -15%, #e2e8ff 0, transparent 50%),
+    linear-gradient(180deg, #f8fbff 0%, #edf2fb 55%, #ecf0fb 100%);
+  color: var(--text);
   font-family: 'Inter', -apple-system, sans-serif;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
@@ -42,15 +44,18 @@ img {
 }
 
 :root {
-  --a: #5b6af0;
-  --a-light: rgba(91,106,240,0.09);
-  --a-mid: rgba(91,106,240,0.18);
-  --a-hl: rgba(91,106,240,0.13);
-  --text: #1a1a18;
-  --text2: #6e6d6a;
-  --bg: #f7f6f3;
-  --bg2: #f0efeb;
-  --r: 14px;
+  --a: #3b82f6;
+  --a-light: rgba(59,130,246,0.09);
+  --a-mid: rgba(59,130,246,0.18);
+  --a-hl: rgba(59,130,246,0.15);
+  --text: #0f172a;
+  --text2: #475569;
+  --bg: #ecf0fb;
+  --bg2: #f3f6ff;
+  --surface: #ffffff;
+  --surface2: #f8fafc;
+  --border: #e2e8f0;
+  --r: 18px;
 }
 
 /* NAV — floating island */
@@ -61,21 +66,21 @@ nav {
   gap: 24px;
   padding: 8px 12px 8px 12px;
   height: auto;
-  width: min(420px, calc(100vw - 40px));
-  background: rgba(247,246,243,0.72);
+  width: min(470px, calc(100vw - 40px));
+  background: rgba(255,255,255,0.74);
   backdrop-filter: blur(28px) saturate(1.6);
   -webkit-backdrop-filter: blur(28px) saturate(1.6);
   border-radius: 999px;
-  border: 1px solid rgba(200,198,194,0.55);
+  border: 1px solid rgba(148,163,184,0.35);
   box-shadow:
-    0 8px 32px rgba(26,26,24,0.10),
-    0 2px 8px rgba(26,26,24,0.06);
+    0 8px 24px rgba(15,23,42,0.10),
+    0 2px 6px rgba(15,23,42,0.04);
   transition: box-shadow .3s;
 }
 nav:hover {
   box-shadow:
-    0 12px 40px rgba(26,26,24,0.13),
-    0 2px 10px rgba(26,26,24,0.07);
+    0 12px 34px rgba(15,23,42,0.13),
+    0 2px 10px rgba(15,23,42,0.06);
 }
 .nav-left {
   display: flex; align-items: center; gap: 10px;
@@ -184,13 +189,15 @@ h1 .accent { color: var(--a); }
   line-height: 1.65; max-width: 480px; margin: 0 auto;
 }
 
-/* ESTEBAN — operator proof card */
+/* MDM — operator proof card */
 .esteban-wrap { max-width: 780px; margin: 100px auto 0; padding: 0 24px; }
 .esteban-card {
-  background: #fff;
+  background: var(--surface);
   border-radius: var(--r);
-  padding: 48px;
+  padding: 40px;
+  border: 1px solid var(--border);
   text-align: left;
+  box-shadow: 0 10px 32px rgba(15,23,42,0.08);
 }
 .esteban-head {
   display: flex; flex-direction: column; align-items: center; gap: 12px;
@@ -198,9 +205,10 @@ h1 .accent { color: var(--a); }
 }
 .esteban-photo {
   width: 64px; height: 64px;
-  background: var(--bg2);
+  background: var(--surface2);
   border-radius: 50%; overflow: hidden;
   flex-shrink: 0;
+  border: 1px solid var(--border);
 }
 .esteban-photo img {
   width: 100%; height: 100%; object-fit: cover; display: block;
@@ -232,7 +240,9 @@ h1 .accent { color: var(--a); }
 .esteban-text:last-child { margin-bottom: 0; }
 .esteban-proof {
   border-radius: var(--r);
+  border: 1px solid var(--border);
   overflow: hidden;
+  background: var(--surface2);
 }
 .esteban-proof img {
   width: 100%; height: auto; display: block;
@@ -256,8 +266,9 @@ h1 .accent { color: var(--a); }
 .testimonial-video-card {
   border-radius: var(--r);
   overflow: hidden;
-  background: var(--bg2);
-  box-shadow: 0 4px 16px rgba(26,26,24,0.06);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(15,23,42,0.06);
 }
 .testimonial-video-card wistia-player {
   width: 100%;
@@ -286,8 +297,9 @@ h1 .accent { color: var(--a); }
 .wins-item {
   border-radius: var(--r);
   overflow: hidden;
-  background: var(--bg2);
-  box-shadow: 0 4px 16px rgba(26,26,24,0.06);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(15,23,42,0.06);
   break-inside: avoid;
   margin-bottom: 16px;
 }
@@ -297,8 +309,8 @@ h1 .accent { color: var(--a); }
 
 /* OBJECTIONS */
 .obj-wrap { max-width: 640px; margin: 40px auto 0; padding: 0 24px; }
-.oitem { border-top: 1px solid rgba(26,26,24,0.08); cursor: pointer; }
-.oitem:last-child { border-bottom: 1px solid rgba(26,26,24,0.08); }
+.oitem { border-top: 1px solid rgba(15,23,42,0.10); cursor: pointer; }
+.oitem:last-child { border-bottom: 1px solid rgba(15,23,42,0.10); }
 .ohead { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; gap: 20px; }
 .oq { font-size: 15px; font-weight: 500; color: var(--text); line-height: 1.4; transition: color .2s; }
 .oitem:hover .oq { color: var(--a); }
@@ -359,7 +371,7 @@ h1 .accent { color: var(--a); }
 /* FOOTER */
 footer {
   margin-top: 100px;
-  background: var(--text);
+  background: #0b1220;
   padding-bottom: env(safe-area-inset-bottom);
 }
 .footer-row {
@@ -385,7 +397,7 @@ footer {
   line-height: 1;
 }
 .footer-copy {
-  font-size: 14px; color: rgba(255,255,255,0.28); font-weight: 300;
+  font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 300;
   line-height: 1;
 }
 .footer-legal {
@@ -393,7 +405,7 @@ footer {
   line-height: 1;
 }
 .footer-legal a {
-  font-size: 14px; color: rgba(255,255,255,0.28);
+  font-size: 14px; color: rgba(255,255,255,0.45);
   font-weight: 300; transition: color .2s;
   line-height: 1;
 }
@@ -449,9 +461,9 @@ wistia-player { width: 100%; display: block; }
 <a class="nav-pill" data-scroll-to-apply="" href="#apply">Apply now</a>
 </nav>
 <section class="hero">
-<div class="hero-tag">Attention dropshippers stuck under $10k/mo</div>
-<h1>How Am I Able to Guarantee You <span class="accent">$10K–$30K/Month in Profit</span> in the Next <span class="accent">60 Days</span> Without Filming a Single Video?</h1>
-<p class="hero-sub">Watch how I pick your winning product and use my <span class="hl">AI Velocity Method</span> to consistently generate viral videos that scale you to your first $1K day.</p>
+<div class="hero-tag">Built for clear, repeatable growth</div>
+<h1>Build a cleaner conversion engine with <span class="accent">MDM</span> and scale predictable <span class="accent">online revenue</span> in 60 days.</h1>
+<p class="hero-sub">MDM focuses your attention on the highest-leverage actions: positioning, systems, and launch rhythm. Get in with a focused plan and a faster path to validated profit.</p>
 </section>
 <div class="video-wrap">
 <wistia-player aspect="1.7777777777777777" media-id="8ysornk98e"></wistia-player>
@@ -461,15 +473,15 @@ wistia-player { width: 100%; display: block; }
 <div class="esteban-card">
 <div class="esteban-head">
 <div class="esteban-photo">
-<img alt="Esteban Poudrier" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-01.jpg"/>
+<img alt="MDM founder portrait" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-01.jpg"/>
 </div>
-<div class="esteban-name">Esteban Poudrier<svg aria-hidden="true" class="verified" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" fill="#1d9bf0" r="11"></circle><path d="M7.5 12.3l3 3 6-6" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+<div class="esteban-name">MDM Leadership Team<svg aria-hidden="true" class="verified" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" fill="#1d9bf0" r="11"></circle><path d="M7.5 12.3l3 3 6-6" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
 </div>
 <div class="esteban-body">
 <div class="esteban-article">
-<p class="esteban-text">I launched a new store in April 2026. Six days later, $7K days at 70% margins. A week in, my store was already doing <span class="hl">$10K to $15K days</span>.</p>
-<p class="esteban-text">Everyone else in organic is running pump-and-dump stores. One product, a few weeks, then they bail. I've built an AI system that scales a real brand to <span class="hl">multiple six figures a month</span>. Nobody else in ecom is doing this.</p>
-<p class="esteban-text">My first student was 16 with zero experience. $45K his first month. He ran the product I picked and posted what I told him to post.</p>
+<p class="esteban-text">MDM combines strategy, positioning, and AI-assisted content production into a single repeatable operating system for DTC growth.</p>
+<p class="esteban-text">Many teams chase tactics and burn budget. MDM narrows focus to what compounds: high-value traffic, stronger creative direction, and a simple launch cadence your team can execute.</p>
+<p class="esteban-text">Our members launch faster, iterate with real data, and move into scalable systems rather than one-off "hacks" that fade after a few weeks.</p>
 </div>
 <div class="esteban-proof">
 <img alt="Shopify dashboard showing $100K in sales" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-02.jpg"/>
@@ -478,7 +490,7 @@ wistia-player { width: 100%; display: block; }
 </div>
 </div>
 <div class="content reveal">
-<h2 class="section-title">My students are<br/>doing the <span class="accent">exact same thing</span></h2>
+<h2 class="section-title">Our students are<br/>building the <span class="accent">same momentum</span></h2>
 </div>
 <div class="wins-wrap reveal">
 <div class="testimonial-video-wrap">
@@ -520,39 +532,39 @@ wistia-player { width: 100%; display: block; }
 <div class="guarantee-wrap reveal">
 <div class="guarantee-card">
 <div class="g-pill">60 day guarantee</div>
-<div class="g-title">Hit your first $1K day in 60 days<br/>or I send every dollar back</div>
-<p class="g-text">If you join, follow the process, and don't hit a $1K day in 60 days, you get a full refund. I take the risk. You do the work. If the method doesn't deliver, the money comes back.</p>
+<div class="g-title">Hit a meaningful first milestone in 60 days<br/>or reduce risk with our structured guarantee</div>
+<p class="g-text">If you follow the MDM process and do not see initial proof of momentum in 60 days, support is built in and support terms apply through the process. We stay transparent and outcome-focused.</p>
 </div>
 </div>
 <div class="content reveal">
-<h2 class="section-title">Questions you're<br/>probably <span class="accent">asking</span></h2>
+<h2 class="section-title">Questions you may still have<br/>about MDM</h2>
 </div>
 <div class="obj-wrap reveal">
 <div class="oitem">
-<div class="ohead" onclick="tog(this)"><span class="oq">I've been burned by coaches before.</span><span class="otoggle">+</span></div>
-<div class="obody"><p class="oa">Most coaches stopped running stores 2 to 3 years ago. They're selling you the playbook from when they last had it working. I launched a new store last month and hit $7K days within a week. I'm teaching you what I'm doing right now, not what worked 3 years ago.</p></div>
+<div class="ohead" onclick="tog(this)"><span class="oq">Will this feel too advanced for me?</span><span class="otoggle">+</span></div>
+<div class="obody"><p class="oa">No. MDM starts with your current baseline and builds a clean stack of one system at a time. We focus on execution clarity first, then scale by adding layers.</p></div>
 </div>
 <div class="oitem">
-<div class="ohead" onclick="tog(this)"><span class="oq">What am I actually paying for?</span><span class="otoggle">+</span></div>
-<div class="obody"><p class="oa">You're paying me to personally pick your winning product, hand you the AI system that runs the content for you, and work with you 1-on-1 until you hit your first $1K day. It's not a course. It's not a Discord. You're paying for the outcome.</p></div>
+<div class="ohead" onclick="tog(this)"><span class="oq">What exactly are the deliverables?</span><span class="otoggle">+</span></div>
+<div class="obody"><p class="oa">MDM includes strategy sessions, a launch blueprint, content cadence framework, and hands-on implementation support so you can apply the process consistently.</p></div>
 </div>
 <div class="oitem">
 <div class="ohead" onclick="tog(this)"><span class="oq">What if the product you pick doesn't work for me?</span><span class="otoggle">+</span></div>
-<div class="obody"><p class="oa">If you follow the process and you're not at a $1K day inside 60 days, you get a full refund. I carry the risk, not you.</p></div>
+<div class="obody"><p class="oa">If execution and reporting are completed as designed, the team adjusts offers and funnels with you. The framework is built to optimize, not rely on guesswork.</p></div>
 </div>
 <div class="oitem">
-<div class="ohead" onclick="tog(this)"><span class="oq">Isn't dropshipping saturated?</span><span class="otoggle">+</span></div>
-<div class="obody"><p class="oa">It looks saturated because most people are running pump-and-dump stores. One product, two weeks, then they bail and start over. I'm running an AI system that scales a real brand to multiple six figures a month. That side of dropshipping is wide open.</p></div>
+<div class="ohead" onclick="tog(this)"><span class="oq">Is this only for one niche?</span><span class="otoggle">+</span></div>
+<div class="obody"><p class="oa">No. The process maps to dropshipping, creator-led stores, supplements, and any direct-to-consumer offer where demand can be tested and refined quickly.</p></div>
 </div>
 <div class="oitem">
-<div class="ohead" onclick="tog(this)"><span class="oq">How much time does this take?</span><span class="otoggle">+</span></div>
-<div class="obody"><p class="oa">2 to 4 hours a day to post content and one hour a week for our call. The AI handles what used to take all day. Most of my students do this around school or a 9-to-5.</p></div>
+<div class="ohead" onclick="tog(this)"><span class="oq">How much time should I expect weekly?</span><span class="otoggle">+</span></div>
+<div class="obody"><p class="oa">Most teams can start with 5 to 8 hours per week for the first month and then shift to steady execution cadence once your system is running.</p></div>
 </div>
 </div>
 <div class="cta-wrap reveal" id="apply">
-<div class="cta-h">You've seen what I'm doing<br/>Let's see if I can do it <span class="accent">for you</span></div>
+<div class="cta-h">You've seen the process<br/>Now let's build your <span class="accent">clean growth system</span></div>
 <!-- iClosed inline widget -->
-<div class="iclosed-widget" data-url="https://app.iclosed.io/e/esteban/strategy-session" style="width: 100%; height: 620px; margin: 24px auto; max-width: 900px;" title="Strategy Session"></div>
+<div class="iclosed-widget" data-url="https://app.iclosed.io/e/mdm/strategy-session" style="width: 100%; height: 620px; margin: 24px auto; max-width: 900px;" title="MDM Strategy Session"></div>
 </div>
 <footer>
 <div class="footer-row">
