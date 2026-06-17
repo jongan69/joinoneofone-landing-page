@@ -504,11 +504,15 @@
 
     .esteban-proof-media {
       width: 100%;
-      max-width: 240px;
+      max-width: 280px;
+      max-height: 560px;
       overflow: hidden;
       border-radius: 12px;
       border: 1px solid rgba(255, 255, 255, 0.16);
       background: var(--bg2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .esteban-proof-caption {
@@ -519,9 +523,10 @@
 
     .esteban-proof img {
       width: 100%;
-      aspect-ratio: 4 / 5;
+      height: auto;
+      max-height: 100%;
       display: block;
-      object-fit: cover;
+      object-fit: contain;
     }
 
 
