@@ -1,4 +1,4 @@
-# One of One Website Replica
+# MDM Website Replica
 
 This repository is a static replica of the public landing page at
 `https://joinoneofone.com`, including all inline HTML/CSS and page sections
