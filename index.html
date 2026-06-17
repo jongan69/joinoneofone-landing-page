@@ -247,8 +247,20 @@ h1 .accent { color: var(--a); }
 .esteban-proof {
   border-radius: var(--r);
   border: 1px solid var(--border);
-  overflow: hidden;
   background: var(--surface2);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.esteban-proof-media {
+  width: 100%;
+  max-width: 240px;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(15,23,42,0.08);
+  background: #fff;
 }
 .esteban-proof-caption {
   font-size: 12px;
@@ -256,7 +268,10 @@ h1 .accent { color: var(--a); }
   margin-top: 8px;
 }
 .esteban-proof img {
-  width: 100%; height: auto; display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  display: block;
+  object-fit: cover;
 }
 
 
@@ -557,7 +572,9 @@ wistia-player { width: 100%; display: block; }
 <p class="esteban-text">Members of MDM get a practical operating framework, weekly momentum tracking, and a growth cadence that scales with your business.</p>
 </div>
 <div class="esteban-proof">
+<div class="esteban-proof-media">
 <img alt="Josep, top student" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-02.jpg"/>
+</div>
 <p class="esteban-proof-caption">Josep | Top student</p>
 </div>
 </div>
