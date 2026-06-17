@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>One of One</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="assets/images/favicon.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<script async="" src="https://fast.wistia.com/player.js"></script>
+<script async="" src="https://fast.wistia.com/embed/8ysornk98e.js" type="module"></script><script async="" src="https://fast.wistia.com/embed/3xbr43843t.js" type="module"></script><script async="" src="https://fast.wistia.com/embed/d93138w3dd.js" type="module"></script><script async="" src="https://fast.wistia.com/embed/bek46gug12.js" type="module"></script><script async="" src="https://fast.wistia.com/embed/cr63294vmv.js" type="module"></script>
+<style>wistia-player[media-id='8ysornk98e']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/8ysornk98e/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style><style>wistia-player[media-id='3xbr43843t']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/3xbr43843t/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style><style>wistia-player[media-id='d93138w3dd']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/d93138w3dd/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style><style>wistia-player[media-id='bek46gug12']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/bek46gug12/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style><style>wistia-player[media-id='cr63294vmv']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/cr63294vmv/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background: #1a1a18; }
+#apply { scroll-margin-top: 100px; }
+
+body {
+  background: #f7f6f3;
+  color: #1a1a18;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  pointer-events: none;
+}
+
+:root {
+  --a: #5b6af0;
+  --a-light: rgba(91,106,240,0.09);
+  --a-mid: rgba(91,106,240,0.18);
+  --a-hl: rgba(91,106,240,0.13);
+  --text: #1a1a18;
+  --text2: #6e6d6a;
+  --bg: #f7f6f3;
+  --bg2: #f0efeb;
+  --r: 14px;
+}
+
+/* NAV — floating island */
+nav {
+  position: fixed; top: 18px; left: 50%; transform: translateX(-50%);
+  z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px;
+  padding: 8px 12px 8px 12px;
+  height: auto;
+  width: min(420px, calc(100vw - 40px));
+  background: rgba(247,246,243,0.72);
+  backdrop-filter: blur(28px) saturate(1.6);
+  -webkit-backdrop-filter: blur(28px) saturate(1.6);
+  border-radius: 999px;
+  border: 1px solid rgba(200,198,194,0.55);
+  box-shadow:
+    0 8px 32px rgba(26,26,24,0.10),
+    0 2px 8px rgba(26,26,24,0.06);
+  transition: box-shadow .3s;
+}
+nav:hover {
+  box-shadow:
+    0 12px 40px rgba(26,26,24,0.13),
+    0 2px 10px rgba(26,26,24,0.07);
+}
+.nav-left {
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo-img {
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(26,26,24,0.15);
+}
+.logo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px; font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  padding-right: 4px;
+}
+.nav-pill {
+  font-size: 12px; font-weight: 500;
+  color: #fff;
+  background: var(--a);
+  padding: 8px 20px; border-radius: 999px;
+  transition: opacity .2s, transform .15s;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.nav-pill:hover { opacity: .88; transform: scale(0.97); }
+
+/* HERO */
+.hero {
+  padding: 124px 24px 12px;
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center;
+  width: 100%;
+}
+.hero-tag {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--a); background: var(--a-light);
+  padding: 5px 14px; border-radius: 999px;
+  margin-bottom: 28px;
+  opacity: 0; animation: up .6s .05s ease forwards;
+}
+h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  max-width: 900px;
+  width: 100%;
+  margin-bottom: 24px;
+  opacity: 0; animation: up .7s .15s ease forwards;
+}
+h1 .accent { color: var(--a); }
+
+.hero-sub {
+  font-size: 17px; font-weight: 300;
+  color: var(--text2);
+  max-width: 540px; line-height: 1.65;
+  opacity: 0; animation: up .7s .25s ease forwards;
+}
+.hl {
+  background: var(--a-hl);
+  color: var(--text);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-weight: 400;
+}
+
+/* VIDEO + CTA block */
+.video-wrap {
+  width: 100%; max-width: 780px;
+  padding: 12px 24px 0;
+  margin: 0 auto;
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
+  opacity: 0; animation: up .8s .35s ease forwards;
+}
+.video-wrap wistia-player { width: 100%; display: block; }
+.hero-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 15px; font-weight: 400; color: #fff;
+  background: var(--a); padding: 16px 36px; border-radius: 999px;
+  transition: opacity .2s, transform .15s; letter-spacing: 0.005em;
+}
+.hero-btn:hover { opacity: .88; transform: scale(0.97); }
+
+/* SECTION WRAPPER */
+.content {
+  max-width: 640px; margin: 0 auto;
+  padding: 100px 24px 0; text-align: center;
+}
+.section-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 800; line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--text); margin-bottom: 16px;
+}
+.section-title .accent { color: var(--a); }
+.section-sub {
+  font-size: 15px; font-weight: 300; color: var(--text2);
+  line-height: 1.65; max-width: 480px; margin: 0 auto;
+}
+
+/* ESTEBAN — operator proof card */
+.esteban-wrap { max-width: 780px; margin: 100px auto 0; padding: 0 24px; }
+.esteban-card {
+  background: #fff;
+  border-radius: var(--r);
+  padding: 48px;
+  text-align: left;
+}
+.esteban-head {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  margin-bottom: 32px;
+}
+.esteban-photo {
+  width: 64px; height: 64px;
+  background: var(--bg2);
+  border-radius: 50%; overflow: hidden;
+  flex-shrink: 0;
+}
+.esteban-photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.esteban-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px; font-weight: 700;
+  color: var(--text); letter-spacing: -0.02em;
+  display: flex; align-items: center; gap: 6px;
+}
+.verified {
+  width: 15px; height: 15px;
+  flex-shrink: 0;
+  position: relative;
+  top: 1px;
+}
+.esteban-body {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 36px;
+  align-items: center;
+}
+.esteban-article { padding-top: 2px; }
+.esteban-text {
+  font-size: 15px; line-height: 1.65; font-weight: 300;
+  color: var(--text2);
+  margin-bottom: 14px;
+}
+.esteban-text:last-child { margin-bottom: 0; }
+.esteban-proof {
+  border-radius: var(--r);
+  overflow: hidden;
+}
+.esteban-proof img {
+  width: 100%; height: auto; display: block;
+}
+
+
+/* STUDENT TESTIMONIAL VIDEOS */
+.testimonial-video-wrap {
+  max-width: 780px;
+  margin: 0 auto 28px;
+}
+.testimonial-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 360px));
+  justify-content: center;
+  gap: 16px;
+}
+.testimonial-video-item {
+  min-width: 0;
+}
+.testimonial-video-card {
+  border-radius: var(--r);
+  overflow: hidden;
+  background: var(--bg2);
+  box-shadow: 0 4px 16px rgba(26,26,24,0.06);
+}
+.testimonial-video-card wistia-player {
+  width: 100%;
+  display: block;
+}
+.testimonial-video-caption {
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.55;
+  font-weight: 300;
+  text-align: center;
+  max-width: 420px;
+  margin: 12px auto 0;
+}
+.testimonial-video-caption strong {
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* STUDENT WINS — proof receipts */
+.wins-wrap { max-width: 780px; margin: 40px auto 0; padding: 0 24px; }
+.wins-grid {
+  column-count: 3;
+  column-gap: 16px;
+}
+.wins-item {
+  border-radius: var(--r);
+  overflow: hidden;
+  background: var(--bg2);
+  box-shadow: 0 4px 16px rgba(26,26,24,0.06);
+  break-inside: avoid;
+  margin-bottom: 16px;
+}
+.wins-item img {
+  width: 100%; height: auto; display: block;
+}
+
+/* OBJECTIONS */
+.obj-wrap { max-width: 640px; margin: 40px auto 0; padding: 0 24px; }
+.oitem { border-top: 1px solid rgba(26,26,24,0.08); cursor: pointer; }
+.oitem:last-child { border-bottom: 1px solid rgba(26,26,24,0.08); }
+.ohead { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; gap: 20px; }
+.oq { font-size: 15px; font-weight: 500; color: var(--text); line-height: 1.4; transition: color .2s; }
+.oitem:hover .oq { color: var(--a); }
+.otoggle { font-size: 20px; font-weight: 300; line-height: 1; color: var(--text2); flex-shrink: 0; transition: transform .3s, color .2s; width: 20px; text-align: center; }
+.oitem.open .otoggle { transform: rotate(45deg); color: var(--a); }
+.obody { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+.oa { font-size: 15px; color: var(--text2); line-height: 1.7; font-weight: 300; padding: 0 0 20px; }
+
+/* GUARANTEE */
+.guarantee-wrap { max-width: 780px; margin: 100px auto 0; padding: 0 24px; }
+.guarantee-card {
+  background: var(--text); border-radius: var(--r);
+  padding: 48px; text-align: center; position: relative; overflow: hidden;
+}
+.g-pill {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.08);
+  padding: 5px 14px; border-radius: 999px; margin-bottom: 20px;
+  display: inline-block; position: relative;
+}
+.g-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(26px, 4vw, 42px); font-weight: 800;
+  color: #fff; line-height: 1.05; margin-bottom: 16px;
+  letter-spacing: -0.025em; position: relative;
+}
+.g-text {
+  font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.65;
+  max-width: 480px; margin: 0 auto; font-weight: 300; position: relative;
+}
+
+/* CTA */
+.cta-wrap { max-width: 640px; margin: 100px auto 0; padding: 0 24px; text-align: center; }
+.cta-h {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(26px, 4vw, 42px); font-weight: 800;
+  line-height: 1.05; letter-spacing: -0.025em;
+  color: var(--text); margin-bottom: 24px;
+}
+.cta-h .accent { color: var(--a); }
+.cta-sub {
+  font-size: 15px; color: var(--text2); line-height: 1.65; font-weight: 300;
+  margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto;
+}
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 15px; font-weight: 400; color: #fff;
+  background: var(--a); padding: 16px 36px; border-radius: 999px;
+  transition: opacity .2s, transform .15s; letter-spacing: 0.005em;
+}
+.cta-btn:hover { opacity: .88; transform: scale(0.97); }
+.cta-ps {
+  font-size: 15px; color: var(--text2); line-height: 1.65; font-weight: 300;
+  margin-top: 40px; max-width: 480px; margin-left: auto; margin-right: auto;
+}
+.cta-ps strong { font-weight: 500; color: var(--text); }
+
+/* FOOTER */
+footer {
+  margin-top: 100px;
+  background: var(--text);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.footer-row {
+  max-width: 780px; margin: 0 auto;
+  padding: 32px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px;
+}
+.footer-brand {
+  display: flex; align-items: center; gap: 12px;
+  line-height: 1;
+}
+.footer-logo-img {
+  width: 26px; height: 26px;
+  border-radius: 6px; object-fit: cover;
+  opacity: 0.9;
+}
+.footer-logo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px; font-weight: 700;
+  letter-spacing: -0.02em;
+  color: rgba(255,255,255,0.88);
+  line-height: 1;
+}
+.footer-copy {
+  font-size: 14px; color: rgba(255,255,255,0.28); font-weight: 300;
+  line-height: 1;
+}
+.footer-legal {
+  display: flex; gap: 20px;
+  line-height: 1;
+}
+.footer-legal a {
+  font-size: 14px; color: rgba(255,255,255,0.28);
+  font-weight: 300; transition: color .2s;
+  line-height: 1;
+}
+.footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.on { opacity: 1; transform: none; }
+
+@keyframes up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 900px) {
+  .testimonial-video-wrap { max-width: 780px; }
+  .testimonial-video-grid { grid-template-columns: repeat(2, minmax(0, 360px)); }
+}
+
+@media (max-width: 640px) {
+  .esteban-card { padding: 32px; }
+  .esteban-body { grid-template-columns: 1fr; gap: 24px; }
+  .guarantee-card { padding: 32px; }
+  .footer-row { 
+    flex-direction: column; gap: 16px; text-align: center; 
+    padding: 32px 24px 40px;
+  }
+  .testimonial-video-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+  .wins-grid { column-count: 1; }
+}
+
+
+/* Mobile reliability patch */
+img, video, iframe, wistia-player { max-width: 100%; }
+wistia-player { width: 100%; display: block; }
+.iclosed-widget { width: 100%; max-width: 900px; min-height: 620px; }
+@media (max-width: 640px) {
+  .hero { padding-left: 18px; padding-right: 18px; }
+  .video-wrap, .esteban-wrap, .wins-wrap, .obj-wrap, .guarantee-wrap, .cta-wrap { padding-left: 18px; padding-right: 18px; }
+  .iclosed-widget { height: 760px !important; min-height: 760px; margin: 20px auto 0 !important; }
+  nav { width: calc(100vw - 24px); gap: 12px; }
+  .nav-pill { padding: 8px 14px; }
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-left">
+<img alt="One of One logo" class="nav-logo-img" src="assets/images/logo.png"/>
+<div class="logo">One of One</div>
+</div>
+<a class="nav-pill" data-scroll-to-apply="" href="#apply">Apply now</a>
+</nav>
+<section class="hero">
+<div class="hero-tag">Attention dropshippers stuck under $10k/mo</div>
+<h1>How Am I Able to Guarantee You <span class="accent">$10K–$30K/Month in Profit</span> in the Next <span class="accent">60 Days</span> Without Filming a Single Video?</h1>
+<p class="hero-sub">Watch how I pick your winning product and use my <span class="hl">AI Velocity Method</span> to consistently generate viral videos that scale you to your first $1K day.</p>
+</section>
+<div class="video-wrap">
+<wistia-player aspect="1.7777777777777777" media-id="8ysornk98e"></wistia-player>
+<a class="hero-btn" data-scroll-to-apply="" href="#apply">Apply now</a>
+</div>
+<div class="esteban-wrap reveal">
+<div class="esteban-card">
+<div class="esteban-head">
+<div class="esteban-photo">
+<img alt="Esteban Poudrier" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-01.jpg"/>
+</div>
+<div class="esteban-name">Esteban Poudrier<svg aria-hidden="true" class="verified" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" fill="#1d9bf0" r="11"></circle><path d="M7.5 12.3l3 3 6-6" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+</div>
+<div class="esteban-body">
+<div class="esteban-article">
+<p class="esteban-text">I launched a new store in April 2026. Six days later, $7K days at 70% margins. A week in, my store was already doing <span class="hl">$10K to $15K days</span>.</p>
+<p class="esteban-text">Everyone else in organic is running pump-and-dump stores. One product, a few weeks, then they bail. I've built an AI system that scales a real brand to <span class="hl">multiple six figures a month</span>. Nobody else in ecom is doing this.</p>
+<p class="esteban-text">My first student was 16 with zero experience. $45K his first month. He ran the product I picked and posted what I told him to post.</p>
+</div>
+<div class="esteban-proof">
+<img alt="Shopify dashboard showing $100K in sales" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-02.jpg"/>
+</div>
+</div>
+</div>
+</div>
+<div class="content reveal">
+<h2 class="section-title">My students are<br/>doing the <span class="accent">exact same thing</span></h2>
+</div>
+<div class="wins-wrap reveal">
+<div class="testimonial-video-wrap">
+<div class="testimonial-video-grid">
+<div class="testimonial-video-item">
+<div class="testimonial-video-card"><wistia-player aspect="0.5625" media-id="3xbr43843t"></wistia-player></div>
+<p class="testimonial-video-caption"><strong>Adonis</strong> was only 5 days into the program when he generated $4.9K in revenue.</p>
+</div>
+<div class="testimonial-video-item">
+<div class="testimonial-video-card"><wistia-player aspect="0.5625" media-id="d93138w3dd"></wistia-player></div>
+<p class="testimonial-video-caption"><strong>Ben</strong> is 17 years old and hit a $15K week and a $6.2K day after just a few days in the mentorship.</p>
+</div>
+<div class="testimonial-video-item">
+<div class="testimonial-video-card"><wistia-player aspect="0.5625" media-id="bek46gug12"></wistia-player></div>
+<p class="testimonial-video-caption"><strong>Tristan</strong> is 21 years old and nearly hit $1K in four days after joining the mentorship.</p>
+</div>
+<div class="testimonial-video-item">
+<div class="testimonial-video-card"><wistia-player aspect="0.5625" media-id="cr63294vmv"></wistia-player></div>
+<p class="testimonial-video-caption"><strong>George</strong> is 20 years old and, within three weeks of joining, had videos hit 900K and 2.2M views while doing over $27K in sales in four days.</p>
+</div>
+</div>
+</div><div class="wins-grid"><!-- NEW WINS SCREENSHOTS ADDED 2026-06-12 -->
+<div class="wins-item new-win-screenshot"><img alt="WorthyEU 2k+ student win screenshot" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-03.jpg"/></div>
+<div class="wins-item new-win-screenshot"><img alt="Tristan $1,000 in 4 days student win screenshot" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-04.jpg"/></div>
+<div class="wins-item new-win-screenshot"><img alt="WorthyEU 5.7k day student win screenshot" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-05.jpg"/></div>
+<div class="wins-item"><img alt="Student result screenshot from Adonis" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-06.jpg"/></div>
+<div class="wins-item"><img alt="Student result screenshot 1" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-07.png"/></div>
+<div class="wins-item"><img alt="Student result screenshot 2" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-08.png"/></div>
+<div class="wins-item"><img alt="Student result screenshot 3" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-09.png"/></div>
+<div class="wins-item"><img alt="Student result: cashupnext 15k week" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-10.png"/></div>
+<div class="wins-item"><img alt="Student result: Charles hit a 13k day" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-11.png"/></div>
+<div class="wins-item"><img alt="Student result: Jonas launched 1-1 coaching after call" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-12.png"/></div>
+<div class="wins-item"><img alt="Student result: 40k in first month" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-13.jpg"/></div>
+<div class="wins-item"><img alt="Student result: 1.5k per day after one week" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-14.jpg"/></div>
+<div class="wins-item"><img alt="Student results across multiple stores" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-15.jpg"/></div>
+<div class="wins-item"><img alt="Student result: 16yo doing 1.6k days" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-16.jpg"/></div>
+<div class="wins-item"><img alt="Student result screenshot showing 1.9M views on a second post" decoding="async" fetchpriority="low" loading="lazy" src="funnel_mobile_assets/images/inline-image-17.png"/></div></div>
+</div>
+<div class="guarantee-wrap reveal">
+<div class="guarantee-card">
+<div class="g-pill">60 day guarantee</div>
+<div class="g-title">Hit your first $1K day in 60 days<br/>or I send every dollar back</div>
+<p class="g-text">If you join, follow the process, and don't hit a $1K day in 60 days, you get a full refund. I take the risk. You do the work. If the method doesn't deliver, the money comes back.</p>
+</div>
+</div>
+<div class="content reveal">
+<h2 class="section-title">Questions you're<br/>probably <span class="accent">asking</span></h2>
+</div>
+<div class="obj-wrap reveal">
+<div class="oitem">
+<div class="ohead" onclick="tog(this)"><span class="oq">I've been burned by coaches before.</span><span class="otoggle">+</span></div>
+<div class="obody"><p class="oa">Most coaches stopped running stores 2 to 3 years ago. They're selling you the playbook from when they last had it working. I launched a new store last month and hit $7K days within a week. I'm teaching you what I'm doing right now, not what worked 3 years ago.</p></div>
+</div>
+<div class="oitem">
+<div class="ohead" onclick="tog(this)"><span class="oq">What am I actually paying for?</span><span class="otoggle">+</span></div>
+<div class="obody"><p class="oa">You're paying me to personally pick your winning product, hand you the AI system that runs the content for you, and work with you 1-on-1 until you hit your first $1K day. It's not a course. It's not a Discord. You're paying for the outcome.</p></div>
+</div>
+<div class="oitem">
+<div class="ohead" onclick="tog(this)"><span class="oq">What if the product you pick doesn't work for me?</span><span class="otoggle">+</span></div>
+<div class="obody"><p class="oa">If you follow the process and you're not at a $1K day inside 60 days, you get a full refund. I carry the risk, not you.</p></div>
+</div>
+<div class="oitem">
+<div class="ohead" onclick="tog(this)"><span class="oq">Isn't dropshipping saturated?</span><span class="otoggle">+</span></div>
+<div class="obody"><p class="oa">It looks saturated because most people are running pump-and-dump stores. One product, two weeks, then they bail and start over. I'm running an AI system that scales a real brand to multiple six figures a month. That side of dropshipping is wide open.</p></div>
+</div>
+<div class="oitem">
+<div class="ohead" onclick="tog(this)"><span class="oq">How much time does this take?</span><span class="otoggle">+</span></div>
+<div class="obody"><p class="oa">2 to 4 hours a day to post content and one hour a week for our call. The AI handles what used to take all day. Most of my students do this around school or a 9-to-5.</p></div>
+</div>
+</div>
+<div class="cta-wrap reveal" id="apply">
+<div class="cta-h">You've seen what I'm doing<br/>Let's see if I can do it <span class="accent">for you</span></div>
+<!-- iClosed inline widget -->
+<div class="iclosed-widget" data-url="https://app.iclosed.io/e/esteban/strategy-session" style="width: 100%; height: 620px; margin: 24px auto; max-width: 900px;" title="Strategy Session"></div>
+</div>
+<footer>
+<div class="footer-row">
+<div class="footer-brand">
+<img alt="One of One" class="footer-logo-img" src="assets/images/logo.png"/>
+<span class="footer-logo">One of One</span>
+<span class="footer-copy">© 2026</span>
+</div>
+<div class="footer-legal">
+<a href="privacy-policy/">Privacy Policy</a>
+<a href="terms-of-service/">Terms of Service</a>
+</div>
+</div>
+</footer>
+<!-- iClosed popup widget -->
+<script async="" src="https://app.iclosed.io/assets/widget.js" type="text/javascript"></script>
+<!-- Funnel analytics — fires pageview on load + book_clicked on Apply buttons -->
+<script>
+(function () {
+  var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyXJBBsP6FtaLi1t6XGPRuaH_pndIhZEkJz2hr4xWLOWjhbP_euHMKCpE3F4l9K25nE4Q/exec';
+
+  // Per-tab session ID — fresh for every browser tab.
+  var session;
+  try {
+    session = sessionStorage.getItem('fnl_sid');
+    if (!session) {
+      session = Math.random().toString(36).slice(2) + Date.now().toString(36);
+      sessionStorage.setItem('fnl_sid', session);
+    }
+  } catch (e) {
+    session = Math.random().toString(36).slice(2);
+  }
+
+  // Persistent visitor ID — survives reloads, new tabs, days/weeks until
+  // localStorage is cleared. This is what lets the dashboard count "unique
+  // visitors" properly — refreshing the page 15 times = 1 unique, not 15.
+  // Falls back to session ID if localStorage is blocked (private browsing).
+  var visitor;
+  try {
+    visitor = localStorage.getItem('fnl_vid');
+    if (!visitor) {
+      visitor = Math.random().toString(36).slice(2) + Date.now().toString(36);
+      localStorage.setItem('fnl_vid', visitor);
+    }
+  } catch (e) {
+    visitor = session;
+  }
+
+  // Detect device type once from User-Agent. Checks for 'mobile' token which
+  // all phone browsers include but iPad does NOT, so iPad falls through to
+  // desktop. Tablets bucketed as desktop per the dashboard design.
+  var device = (function () {
+    var ua = (navigator.userAgent || '').toLowerCase();
+    var isMobile = /iphone|ipod|android.*mobile|windows phone|blackberry|bb10|mini|mobile/i.test(ua);
+    return isMobile ? 'mobile' : 'desktop';
+  })();
+
+  function track(event) {
+    // Fire-and-forget via image GET — works cross-origin without CORS setup.
+    new Image().src = APPS_SCRIPT_URL +
+      '?action=track&event=' + encodeURIComponent(event) +
+      '&session=' + encodeURIComponent(session) +
+      '&visitor=' + encodeURIComponent(visitor) +
+      '&device=' + encodeURIComponent(device) +
+      '&t=' + Date.now();
+  }
+
+  track('pageview');
+
+  // Fires on any click within an Apply now button (scroll-to-apply or iclosed popup)
+  // (covers all three Apply buttons).
+  document.addEventListener('click', function (e) {
+    var el = e.target;
+    while (el && el !== document.body) {
+      if (el.hasAttribute && (el.hasAttribute('data-iclosed-link') || el.hasAttribute('data-scroll-to-apply'))) {
+        track('book_clicked');
+        return;
+      }
+      el = el.parentElement;
+    }
+  }, true);
+
+  // Expose for Wistia hooks etc. later.
+  window.track = track;
+})();
+</script>
+<script>
+function tog(h) {
+  const item = h.parentElement;
+  const body = item.querySelector('.obody');
+  const open = item.classList.contains('open');
+  document.querySelectorAll('.oitem').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.obody').style.maxHeight = '0';
+  });
+  if (!open) {
+    item.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+const obs = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+}, { threshold: .08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+document.querySelectorAll('img').forEach(img => {
+  img.addEventListener('contextmenu', e => e.preventDefault());
+  img.addEventListener('dragstart', e => e.preventDefault());
+});
+</script>
+<script>
+(function () {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('on'); });
+  }
+})();
+</script></body>
+</html>
