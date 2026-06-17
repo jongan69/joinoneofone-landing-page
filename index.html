@@ -367,6 +367,51 @@ h1 .accent { color: var(--a); }
   margin-top: 40px; max-width: 480px; margin-left: auto; margin-right: auto;
 }
 .cta-ps strong { font-weight: 500; color: var(--text); }
+.mdm-form {
+  margin: 28px auto 0;
+  text-align: left;
+  max-width: 560px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(15,23,42,0.06);
+}
+.mdm-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.mdm-form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+.mdm-form-group.full { grid-column: 1 / -1; }
+.mdm-form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+.mdm-form-input,
+.mdm-form-textarea {
+  width: 100%;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  border-radius: 10px;
+  padding: 12px;
+  font: inherit;
+  color: var(--text);
+  background: #fff;
+}
+.mdm-form-textarea { min-height: 120px; resize: vertical; }
+.mdm-form-submit {
+  margin-top: 8px;
+  width: 100%;
+  justify-content: center;
+}
+.mdm-form-note {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text2);
+  margin-top: 12px;
+  text-align: center;
+}
 
 /* FOOTER */
 footer {
@@ -447,6 +492,7 @@ wistia-player { width: 100%; display: block; }
   .hero { padding-left: 18px; padding-right: 18px; }
   .video-wrap, .esteban-wrap, .wins-wrap, .obj-wrap, .guarantee-wrap, .cta-wrap { padding-left: 18px; padding-right: 18px; }
   .iclosed-widget { height: 760px !important; min-height: 760px; margin: 20px auto 0 !important; }
+  .mdm-form-grid { grid-template-columns: 1fr; }
   nav { width: calc(100vw - 24px); gap: 12px; }
   .nav-pill { padding: 8px 14px; }
 }
@@ -563,8 +609,33 @@ wistia-player { width: 100%; display: block; }
 </div>
 <div class="cta-wrap reveal" id="apply">
 <div class="cta-h">You've seen the process<br/>Now let's build your <span class="accent">clean growth system</span></div>
-<!-- iClosed inline widget -->
-<div class="iclosed-widget" data-url="https://app.iclosed.io/e/mdm/strategy-session" style="width: 100%; height: 620px; margin: 24px auto; max-width: 900px;" title="MDM Strategy Session"></div>
+<p class="cta-sub">Send your details below and we'll text a specialist at <strong>+1 (504) 405-9406</strong> to book your strategy session.</p>
+<form class="mdm-form" id="mdm-lead-form" name="mdm-lead-form">
+  <div class="mdm-form-grid">
+    <div class="mdm-form-group">
+      <label class="mdm-form-label" for="mdm-name">Full name</label>
+      <input class="mdm-form-input" id="mdm-name" name="name" required type="text"/>
+    </div>
+    <div class="mdm-form-group">
+      <label class="mdm-form-label" for="mdm-email">Email</label>
+      <input class="mdm-form-input" id="mdm-email" name="email" required type="email"/>
+    </div>
+    <div class="mdm-form-group">
+      <label class="mdm-form-label" for="mdm-phone">Phone number</label>
+      <input class="mdm-form-input" id="mdm-phone" name="phone" required type="tel"/>
+    </div>
+    <div class="mdm-form-group">
+      <label class="mdm-form-label" for="mdm-business">Business / brand</label>
+      <input class="mdm-form-input" id="mdm-business" name="business" type="text"/>
+    </div>
+    <div class="mdm-form-group full">
+      <label class="mdm-form-label" for="mdm-goals">What are you trying to grow?</label>
+      <textarea class="mdm-form-textarea" id="mdm-goals" name="goals" placeholder="What are your current goals, budget, and timeline?" rows="4"></textarea>
+    </div>
+  </div>
+  <button class="cta-btn mdm-form-submit" type="submit">Send to MDM via text</button>
+  <p class="mdm-form-note">Submitting opens your messaging app with a pre-filled message to +1 (504) 405-9406.</p>
+</form>
 </div>
 <footer>
 <div class="footer-row">
@@ -579,8 +650,6 @@ wistia-player { width: 100%; display: block; }
 </div>
 </div>
 </footer>
-<!-- iClosed popup widget -->
-<script async="" src="https://app.iclosed.io/assets/widget.js" type="text/javascript"></script>
 <!-- Funnel analytics — fires pageview on load + book_clicked on Apply buttons -->
 <script>
 (function () {
@@ -649,6 +718,38 @@ wistia-player { width: 100%; display: block; }
 
   // Expose for Wistia hooks etc. later.
   window.track = track;
+})();
+</script>
+<script>
+(function () {
+  var form = document.getElementById('mdm-lead-form');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var payload = {
+      name: (form.name.value || '').trim(),
+      email: (form.email.value || '').trim(),
+      phone: (form.phone.value || '').trim(),
+      business: (form.business.value || '').trim(),
+      goals: (form.goals.value || '').trim()
+    };
+
+    var details = [
+      'New MDM lead from landing page',
+      'Name: ' + payload.name,
+      'Email: ' + payload.email,
+      'Phone: ' + payload.phone,
+      'Business: ' + payload.business,
+      'Goals: ' + payload.goals
+    ];
+
+    var smsBody = encodeURIComponent(details.join('\n'));
+    if (typeof window.track === 'function') {
+      window.track('form_submit');
+    }
+    window.location.href = 'sms:+15044059406?body=' + smsBody;
+  });
 })();
 </script>
 <script>
