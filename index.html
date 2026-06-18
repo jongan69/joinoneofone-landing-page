@@ -1716,18 +1716,14 @@
               <label class="mdm-form-label" for="mdm-email">Email</label>
               <input class="mdm-form-input" id="mdm-email" name="email" required type="email" />
             </div>
-            <div class="mdm-form-group">
-              <label class="mdm-form-label" for="mdm-phone">Phone number</label>
-              <input class="mdm-form-input" id="mdm-phone" name="phone" required type="tel" />
-            </div>
-            <div class="mdm-form-group">
-              <label class="mdm-form-label" for="mdm-business">Business / brand</label>
-              <input class="mdm-form-input" id="mdm-business" name="business" type="text" />
-            </div>
-            <div class="mdm-form-group full">
-              <label class="mdm-form-label" for="mdm-goals">What are you trying to grow?</label>
-              <textarea class="mdm-form-textarea" id="mdm-goals" name="goals"
-                placeholder="What are your current goals, budget, and timeline?" rows="4"></textarea>
+              <div class="mdm-form-group">
+                <label class="mdm-form-label" for="mdm-phone">Phone number</label>
+                <input class="mdm-form-input" id="mdm-phone" name="phone" required type="tel" />
+              </div>
+              <div class="mdm-form-group full">
+                <label class="mdm-form-label" for="mdm-goals">What are you trying to grow?</label>
+                <textarea class="mdm-form-textarea" id="mdm-goals" name="goals"
+                  placeholder="What are your current goals, budget, and timeline?" rows="4"></textarea>
             </div>
           </div>
           <button class="cta-btn mdm-form-submit" type="submit">Send to MDM via text</button>
@@ -1963,7 +1959,6 @@
             name: (form.name.value || '').trim(),
             email: (form.email.value || '').trim(),
             phone: (form.phone.value || '').trim(),
-            business: (form.business.value || '').trim(),
             goals: (form.goals.value || '').trim()
           };
 
@@ -1972,7 +1967,6 @@
             'Name: ' + payload.name,
             'Email: ' + payload.email,
             'Phone: ' + payload.phone,
-            'Business: ' + payload.business,
             'Goals: ' + payload.goals
           ];
 
