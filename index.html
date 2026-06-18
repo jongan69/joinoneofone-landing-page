@@ -603,6 +603,7 @@
       border: 1px solid rgba(255, 255, 255, 0.12);
       box-shadow: 0 14px 34px rgba(8, 12, 30, 0.45);
       break-inside: avoid;
+      aspect-ratio: 4 / 3;
       margin-bottom: 16px;
       transition: transform .35s ease, box-shadow .35s ease;
     }
@@ -613,8 +614,73 @@
 
     .wins-item img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      aspect-ratio: inherit;
+      object-fit: cover;
       display: block;
+    }
+
+    .wins-item.new-win-screenshot {
+      cursor: zoom-in;
+    }
+
+    .testimonial-image-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      background: rgba(2, 8, 24, 0.88);
+      padding: 22px;
+      z-index: 80;
+      backdrop-filter: blur(6px);
+    }
+
+    .testimonial-image-modal.is-open {
+      display: flex;
+    }
+
+    .testimonial-image-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      cursor: zoom-out;
+    }
+
+    .testimonial-image-modal img {
+      position: relative;
+      width: min(92vw, 1200px);
+      height: auto;
+      max-height: 88vh;
+      border-radius: 16px;
+      box-shadow: 0 34px 70px rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      object-fit: contain;
+      display: block;
+    }
+
+    .testimonial-image-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.14);
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      z-index: 2;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .testimonial-image-close:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: scale(1.04);
     }
 
     /* OBJECTIONS */
@@ -1571,6 +1637,13 @@
       </div>
     </footer>
 
+    <div class="testimonial-image-modal" id="testimonial-image-modal" aria-hidden="true" role="dialog"
+      aria-label="Testimonial image preview">
+      <span class="testimonial-image-modal-backdrop" id="testimonial-image-backdrop"></span>
+      <button class="testimonial-image-close" id="testimonial-image-close" aria-label="Close image preview">×</button>
+      <img alt="" id="testimonial-modal-image" src="" />
+    </div>
+
     <script>
       (function () {
         var c = document.getElementById('mdm-particles');
@@ -1798,10 +1871,10 @@
         });
       })();
     </script>
-    <script>
-      function tog(h) {
-        const item = h.parentElement;
-        const body = item.querySelector('.obody');
+      <script>
+        function tog(h) {
+          const item = h.parentElement;
+          const body = item.querySelector('.obody');
         const open = item.classList.contains('open');
         document.querySelectorAll('.oitem').forEach(i => {
           i.classList.remove('open');
@@ -1821,13 +1894,82 @@
         img.addEventListener('dragstart', e => e.preventDefault());
       });
     </script>
-    <script>
-      (function () {
-        if (!('IntersectionObserver' in window)) {
-          document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('on'); });
-        }
-      })();
-    </script>
+      <script>
+        (function () {
+          var modal = document.getElementById('testimonial-image-modal');
+          if (!modal) return;
+
+          var modalImage = document.getElementById('testimonial-modal-image');
+          var closeBtn = document.getElementById('testimonial-image-close');
+          var backdrop = document.getElementById('testimonial-image-backdrop');
+
+          function openModal(imgEl) {
+            if (!imgEl || !modalImage) return;
+            modalImage.src = imgEl.src;
+            modalImage.alt = imgEl.alt || 'Testimonial image';
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+          }
+
+          function closeModal() {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+            if (modalImage) {
+              modalImage.removeAttribute('src');
+            }
+            document.body.style.overflow = '';
+          }
+
+          document.querySelectorAll('.wins-item.new-win-screenshot img').forEach(function (img) {
+            img.setAttribute('role', 'button');
+            img.setAttribute('tabindex', '0');
+            img.addEventListener('click', function (event) {
+              event.preventDefault();
+              openModal(img);
+            });
+            img.addEventListener('keydown', function (event) {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openModal(img);
+              }
+            });
+          });
+
+          if (closeBtn) {
+            closeBtn.addEventListener('click', function (event) {
+              event.preventDefault();
+              closeModal();
+            });
+          }
+
+          if (backdrop) {
+            backdrop.addEventListener('click', function () {
+              closeModal();
+            });
+          }
+
+          modal.addEventListener('click', function (event) {
+            if (event.target === modal) {
+              closeModal();
+            }
+          });
+
+          document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+              closeModal();
+            }
+          });
+        })();
+      </script>
+
+      <script>
+        (function () {
+          if (!('IntersectionObserver' in window)) {
+            document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('on'); });
+          }
+        })();
+      </script>
 </body>
 
 </html>
