@@ -481,6 +481,38 @@
       gap: 6px;
     }
 
+    .team-social {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 6px 8px;
+    }
+
+    .team-social-label {
+      font-size: 12px;
+      color: rgba(198, 205, 224, 0.85);
+      margin-right: 2px;
+    }
+
+    .team-social a {
+      color: #00f5ff;
+      text-decoration: none;
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 245, 255, 0.4);
+      background: rgba(0, 245, 255, 0.07);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .team-social a:hover {
+      transform: translateY(-1px);
+      border-color: rgba(0, 245, 255, 0.75);
+      background: rgba(0, 245, 255, 0.14);
+    }
+
     .verified {
       width: 15px;
       height: 15px;
@@ -1030,6 +1062,14 @@
       line-height: 1;
     }
 
+    .footer-brand-note {
+      font-size: 13px;
+      color: rgba(215, 223, 245, 0.85);
+      line-height: 1.45;
+      max-width: 320px;
+      margin-top: 8px;
+    }
+
     .footer-legal {
       display: flex;
       gap: 20px;
@@ -1046,6 +1086,29 @@
 
     .footer-legal a:hover {
       color: #eff3ff;
+    }
+
+    .footer-social-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      margin-top: 10px;
+    }
+
+    .footer-social-wrap a {
+      color: rgba(215, 223, 245, 0.88);
+      font-size: 13px;
+      text-decoration: none;
+      padding: 4px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: color .2s, border-color .2s;
+    }
+
+    .footer-social-wrap a:hover {
+      color: #eff3ff;
+      border-color: rgba(255, 255, 255, 0.5);
     }
 
     /* REVEAL */
@@ -1175,6 +1238,15 @@
         padding-bottom: 40px;
         padding-left: clamp(16px, 5vw, 36px);
         padding-right: clamp(16px, 5vw, 36px);
+      }
+
+      .footer-brand {
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .footer-brand-note {
+        max-width: 100%;
       }
 
       .footer-legal {
@@ -1475,6 +1547,11 @@
               <path d="M7.5 12.3l3 3 6-6" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
               </path>
             </svg></div>
+          <div class="team-social">
+            <span class="team-social-label">Connect:</span>
+            <a href="https://www.youtube.com/@Notmanii2x" rel="noreferrer" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com/mdm.manii/" rel="noreferrer" target="_blank">Instagram</a>
+          </div>
         </div>
         <div class="esteban-body">
           <div class="esteban-article">
@@ -1525,6 +1602,11 @@
               <path d="M7.5 12.3l3 3 6-6" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
               </path>
             </svg></div>
+          <div class="team-social">
+            <span class="team-social-label">Connect:</span>
+            <a href="https://www.youtube.com/@joseptorresv1" rel="noreferrer" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com/officialjoseptorres/" rel="noreferrer" target="_blank">Instagram</a>
+          </div>
         </div>
         <div class="esteban-body">
           <div class="esteban-article">
@@ -1738,7 +1820,13 @@
         <div class="footer-brand">
           <img alt="MDM" class="footer-logo-img" src="assets/images/Logo.jpg" />
           <span class="footer-logo">MDM</span>
+          <p class="footer-brand-note">MDM is a group of Ecom professionals that specialize in AI organic dropshipping,
+            scaling systems, and AI ecommerce execution for growing stores.</p>
           <span class="footer-copy">© 2026</span>
+        </div>
+        <div class="footer-social-wrap">
+          <a href="https://www.instagram.com/join.mdm/" rel="noreferrer" target="_blank">Instagram — join.mdm</a>
+          <a href="https://www.youtube.com/@MillionDollarMovez" rel="noreferrer" target="_blank">Case Study YouTube</a>
         </div>
         <div class="footer-legal">
           <a href="privacy-policy/">Privacy Policy</a>
