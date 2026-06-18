@@ -591,8 +591,9 @@
     }
 
     .wins-grid {
-      column-count: 3;
-      column-gap: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
     }
 
     .wins-item {
@@ -1044,6 +1045,10 @@
         grid-template-columns: repeat(2, minmax(0, 360px));
       }
 
+      .wins-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .esteban-body {
         gap: 28px;
       }
@@ -1070,7 +1075,7 @@
       }
 
       .wins-grid {
-        column-count: 1;
+        grid-template-columns: 1fr;
       }
 
       .footer-row {
