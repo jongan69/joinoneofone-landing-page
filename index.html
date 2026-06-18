@@ -165,7 +165,7 @@
       gap: 24px;
       padding: 8px 12px 8px 12px;
       height: auto;
-      width: min(280px, calc(100vw - 40px));
+      width: min(430px, calc(100vw - 40px));
       background: rgba(11, 20, 40, 0.46);
       backdrop-filter: blur(28px) saturate(1.6);
       -webkit-backdrop-filter: blur(28px) saturate(1.6);
@@ -205,6 +205,17 @@
       letter-spacing: -0.02em;
       color: var(--text);
       padding-right: 4px;
+    }
+
+    .nav-right {
+      margin-left: auto;
+    }
+
+    .nav-apply-btn {
+      font-size: 12px;
+      line-height: 1;
+      padding: 10px 16px;
+      border-radius: 999px;
     }
 
     /* HERO */
@@ -1422,6 +1433,9 @@
       <div class="nav-left">
         <img alt="MDM logo" class="nav-logo-img" src="assets/images/Logo.jpg" />
         <div class="logo">MDM</div>
+      </div>
+      <div class="nav-right">
+        <a class="nav-apply-btn cta-btn" data-scroll-to-apply href="#apply">Apply now</a>
       </div>
     </nav>
     <section class="hero">
