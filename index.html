@@ -401,19 +401,6 @@
       min-width: 180px;
     }
 
-    .mobile-apply-sticky {
-      position: fixed;
-      left: 50%;
-      bottom: 14px;
-      transform: translateX(-50%);
-      z-index: 120;
-      padding: 12px 20px;
-      display: none;
-      box-shadow: 0 16px 34px rgba(2, 10, 30, 0.5);
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-    }
-
     /* SECTION WRAPPER */
     .content {
       max-width: 640px;
@@ -1420,7 +1407,7 @@
         font-size: 15px;
       }
 
-      .nav {
+      nav {
         width: calc(100vw - 22px);
         left: 50%;
         transform: translate(-50%, 0);
@@ -1482,10 +1469,6 @@
         padding-right: 18px;
       }
 
-      .mobile-apply-sticky {
-        display: inline-flex;
-      }
-
       .video-wrap,
       .esteban-wrap,
       .wins-wrap,
@@ -1506,13 +1489,29 @@
         grid-template-columns: 1fr;
       }
 
-      .cta-wrap {
-        padding-bottom: 82px;
+      nav {
+        top: 10px;
+        width: calc(100vw - 16px);
+        padding: 7px 10px;
+        gap: 10px;
       }
 
-      nav {
-        width: calc(100vw - 24px);
-        gap: 12px;
+      .nav-left {
+        gap: 8px;
+      }
+
+      .nav-logo-img {
+        width: 30px;
+        height: 30px;
+      }
+
+      .logo {
+        font-size: 14px;
+      }
+
+      .nav-apply-btn {
+        font-size: 11px;
+        padding: 8px 12px;
       }
     }
 
@@ -1624,7 +1623,6 @@
         <a aria-label="Open application form" class="nav-apply-btn cta-btn" data-scroll-to-apply href="#apply">Apply now</a>
       </div>
     </nav>
-    <a aria-label="Apply now" class="mobile-apply-sticky cta-btn" data-scroll-to-apply href="#apply">Apply now</a>
     <main>
     <section class="hero">
       <div class="hero-tag">Still struggling to make your first sale with AI Organic Dropshipping?</div>
