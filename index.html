@@ -5,29 +5,34 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
-  <title>MDM | AI Dropshipping &amp; Ecommerce Growth Program for Shopify Stores</title>
+  <title>MDM | AI Organic Dropshipping Mentorship for Real 90-Day Momentum</title>
   <meta name="description"
-    content="MDM helps operators launch AI-powered ecommerce with a proven 60-day system for AI dropshipping, AI product research, Shopify stores, and conversion-focused growth." />
+    content="MDM helps operators build AI organic dropshipping momentum with a proven 90-day mentorship for AI product research, storefront growth, and conversion-focused execution." />
   <meta name="keywords"
     content="AI dropshipping, artificial intelligence dropshipping, AI ecommerce, AI Shopify store, AI product research, AI product discovery, Shopify dropshipping, dropshipping automation, AI ecommerce automation, AI ad creatives, AI Shopify dropshipping, AI product finding, AI side hustle, online store, ecommerce automation" />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="MDM | AI Dropshipping &amp; Ecommerce Growth Program for Shopify Stores" />
+  <meta name="theme-color" content="#050f29" />
+  <meta property="og:title" content="MDM | AI Organic Dropshipping Mentorship for Real 90-Day Momentum" />
   <meta property="og:description"
-    content="Build a scalable AI-powered dropshipping and Shopify ecommerce system with MDM. Learn AI product research, conversion optimization, and launch systems for sustainable online revenue." />
+    content="Build scalable AI Organic Dropshipping momentum with MDM. Learn AI product research, conversion optimization, and proven systems for real monthly revenue growth in 90 days." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://joinmdm.netlify.app/" />
   <meta property="og:site_name" content="MDM" />
   <meta property="og:image" content="https://joinmdm.netlify.app/assets/images/Logo.jpg" />
   <meta property="og:image:alt" content="MDM brand logo for AI dropshipping and ecommerce coaching" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="MDM | AI Dropshipping Program" />
+  <meta name="twitter:title" content="MDM | AI Organic Dropshipping Mentorship" />
   <meta name="twitter:description"
-    content="Scale your AI dropshipping and Shopify ecommerce business with data-driven systems, AI product research, and conversion playbooks." />
+    content="Scale your AI organic dropshipping with a proven 90-day mentorship, AI product research framework, and conversion systems." />
   <meta name="twitter:image" content="https://joinmdm.netlify.app/assets/images/Logo.jpg" />
   <link rel="canonical" href="https://joinmdm.netlify.app/" />
   <link rel="alternate" href="https://joinmdm.netlify.app/" hreflang="en-US" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.youtube.com" />
+  <link rel="preconnect" href="https://i.ytimg.com" />
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link href="assets/images/Logo.jpg" rel="icon" type="image/jpeg" />
+  <link href="assets/images/Logo.jpg" rel="apple-touch-icon" />
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@300;400;500&amp;family=Syne:wght@500;600;700;800&amp;display=swap"
     rel="stylesheet" />
@@ -81,6 +86,24 @@
     .site-shell {
       position: relative;
       z-index: 2;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      z-index: 999;
+      padding: 12px 16px;
+      background: #eff3ff;
+      color: #03112b;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      left: 16px;
+      top: 16px;
     }
 
     .scene-bg {
@@ -376,6 +399,19 @@
 
     .hero-apply-btn {
       min-width: 180px;
+    }
+
+    .mobile-apply-sticky {
+      position: fixed;
+      left: 50%;
+      bottom: 14px;
+      transform: translateX(-50%);
+      z-index: 120;
+      padding: 12px 20px;
+      display: none;
+      box-shadow: 0 16px 34px rgba(2, 10, 30, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
     }
 
     /* SECTION WRAPPER */
@@ -767,8 +803,18 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      border: 0;
+      background: transparent;
       padding: 20px 0;
       gap: 20px;
+      width: 100%;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .ohead:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.75);
+      outline-offset: 3px;
     }
 
     .oq {
@@ -797,6 +843,10 @@
     .oitem.open .otoggle {
       transform: rotate(45deg);
       color: var(--a);
+    }
+
+    .oitem.open .obody {
+      overflow: auto;
     }
 
     .obody {
@@ -928,6 +978,12 @@
     .cta-btn:hover {
       opacity: .88;
       transform: scale(0.97);
+    }
+
+    .cta-btn:focus-visible,
+    .nav-apply-btn:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.85);
+      outline-offset: 3px;
     }
 
     .cta-ps {
@@ -1426,6 +1482,10 @@
         padding-right: 18px;
       }
 
+      .mobile-apply-sticky {
+        display: inline-flex;
+      }
+
       .video-wrap,
       .esteban-wrap,
       .wins-wrap,
@@ -1444,6 +1504,10 @@
 
       .mdm-form-grid {
         grid-template-columns: 1fr;
+      }
+
+      .cta-wrap {
+        padding-bottom: 82px;
       }
 
       nav {
@@ -1542,6 +1606,7 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#apply">Skip to application</a>
   <div class="scene-bg" aria-hidden="true">
     <canvas id="mdm-particles"></canvas>
     <span class="aurora-bloom"></span>
@@ -1551,22 +1616,26 @@
   <div class="site-shell">
     <nav>
       <div class="nav-left">
-        <img alt="MDM logo" class="nav-logo-img" src="assets/images/Logo.jpg" />
+        <img alt="MDM logo" class="nav-logo-img" decoding="async" height="34" loading="eager" src="assets/images/Logo.jpg"
+          width="34" />
         <div class="logo">MDM</div>
       </div>
       <div class="nav-right">
-        <a class="nav-apply-btn cta-btn" data-scroll-to-apply href="#apply">Apply now</a>
+        <a aria-label="Open application form" class="nav-apply-btn cta-btn" data-scroll-to-apply href="#apply">Apply now</a>
       </div>
     </nav>
+    <a aria-label="Apply now" class="mobile-apply-sticky cta-btn" data-scroll-to-apply href="#apply">Apply now</a>
+    <main>
     <section class="hero">
       <div class="hero-tag">Still struggling to make your first sale with AI Organic Dropshipping?</div>
-      <h1>We Help Everyday People Create Life-Changing <span class="accent">$20K–$50K/Month Results</span> — Without Filming Videos, Guessing What to Do, or Building From Scratch</h1>
-      <p class="hero-sub">MDM gives you a direct execution system, accountability, and the AI-backed framework to move from
-        random testing to dependable growth — without burning months building in the dark.</p>
+      <h1>From endless testing to real momentum. Build your path to <span class="accent">$20K-$50K/Month</span> with
+        AI Organic Dropshipping in 90 days.</h1>
+      <p class="hero-sub">No more lonely guessing. No more random trials. Join people who are building momentum with a
+        proven system, clear execution plan, and the support to keep moving forward.</p>
       <div class="hero-badges">
-        <span class="hero-badge"><strong>AI</strong> Research Framework</span>
-        <span class="hero-badge"><strong>60-Day</strong> Momentum Blueprint</span>
-        <span class="hero-badge"><strong>Done-For-You</strong> Execution Support</span>
+          <span class="hero-badge"><strong>AI</strong> Research Framework</span>
+          <span class="hero-badge"><strong>90-Day</strong> Momentum Blueprint</span>
+          <span class="hero-badge"><strong>Done-For-You</strong> Execution Support</span>
       </div>
       <div class="hero-action-wrap">
         <a class="hero-apply-btn cta-btn" data-scroll-to-apply href="#apply">Apply now</a>
@@ -1584,11 +1653,11 @@
       <div class="esteban-card">
         <div class="esteban-head">
           <div class="esteban-photo">
-            <img alt="Mani headshot" decoding="async" fetchpriority="low" loading="lazy"
+            <img alt="Mani headshot" decoding="async" fetchpriority="low" height="64" loading="lazy" width="64"
               src="assets/images/Mani.JPEG" />
             <p class="esteban-photo-caption">Mani</p>
           </div>
-          <div class="esteban-name">Mani<svg aria-hidden="true" class="verified" fill="none" viewbox="0 0 24 24"
+          <div class="esteban-name">Mani<svg aria-hidden="true" class="verified" fill="none" viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg">
               <circle cx="12" cy="12" fill="#00f5ff" r="11"></circle>
               <path d="M7.5 12.3l3 3 6-6" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -1597,8 +1666,8 @@
           <p class="esteban-role">Founder</p>
           <div class="team-social">
             <span class="team-social-label">Connect:</span>
-            <a href="https://www.youtube.com/@Notmanii2x" rel="noreferrer" target="_blank">YouTube</a>
-            <a href="https://www.instagram.com/mdm.manii/" rel="noreferrer" target="_blank">Instagram</a>
+            <a href="https://www.youtube.com/@Notmanii2x" rel="noopener noreferrer" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com/mdm.manii/" rel="noopener noreferrer" target="_blank">Instagram</a>
           </div>
         </div>
         <div class="esteban-body">
@@ -1626,8 +1695,8 @@
           </div>
           <div class="esteban-proof">
             <div class="esteban-proof-media">
-              <img alt="MDM founder dashboard" decoding="async" fetchpriority="low" loading="lazy"
-                src="assets/images/Founder-Section-Dashboard.jpg" />
+            <img alt="MDM founder dashboard" decoding="async" fetchpriority="low" height="560" loading="lazy" width="280"
+              src="assets/images/Founder-Section-Dashboard.jpg" />
             </div>
             <p class="esteban-proof-caption">MDM VIP mentorship dashboard</p>
           </div>
@@ -1640,11 +1709,11 @@
       <div class="esteban-card">
         <div class="esteban-head">
           <div class="esteban-photo">
-            <img alt="Josep headshot" decoding="async" fetchpriority="low" loading="lazy"
+            <img alt="Josep headshot" decoding="async" fetchpriority="low" height="64" loading="lazy" width="64"
               src="assets/images/Josep-Headshot.JPG" />
             <p class="esteban-photo-caption">Josep</p>
           </div>
-          <div class="esteban-name">Josep<svg aria-hidden="true" class="verified" fill="none" viewbox="0 0 24 24"
+          <div class="esteban-name">Josep<svg aria-hidden="true" class="verified" fill="none" viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg">
               <circle cx="12" cy="12" fill="#00f5ff" r="11"></circle>
               <path d="M7.5 12.3l3 3 6-6" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -1653,8 +1722,8 @@
           <p class="esteban-role">VIP Coach</p>
           <div class="team-social">
             <span class="team-social-label">Connect:</span>
-            <a href="https://www.youtube.com/@joseptorresv1" rel="noreferrer" target="_blank">YouTube</a>
-            <a href="https://www.instagram.com/officialjoseptorres/" rel="noreferrer" target="_blank">Instagram</a>
+            <a href="https://www.youtube.com/@joseptorresv1" rel="noopener noreferrer" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com/officialjoseptorres/" rel="noopener noreferrer" target="_blank">Instagram</a>
           </div>
         </div>
         <div class="esteban-body">
@@ -1672,7 +1741,7 @@
             <p class="esteban-text">Most people would have quit.</p>
             <p class="esteban-text">I didn’t.</p>
             <p class="esteban-text">While I was still sleeping in my car, I made the decision that changed everything: I
-              invested my last money into Manny’s VIP Mentorship instead of choosing comfort.</p>
+              invested my last money into Mani’s VIP Mentorship instead of choosing comfort.</p>
             <p class="esteban-text">Inside the VIP, I learned the strategy, mindset, and AI-powered organic dropshipping
               system that took me from struggling to get results to generating over $500,000 in revenue.</p>
             <p class="esteban-text">I quit my 9-to-5. Bought my dream Corvette. Gave my mom $10,000 cash. Bought a Rolex.
@@ -1687,7 +1756,7 @@
           </div>
           <div class="esteban-proof">
             <div class="esteban-proof-media">
-              <img alt="MDM VIP coach dashboard" decoding="async" fetchpriority="low" loading="lazy"
+              <img alt="MDM VIP coach dashboard" decoding="async" fetchpriority="low" height="560" loading="lazy" width="280"
                 src="assets/images/VIP-Coach-Dashboard.JPG" />
             </div>
             <p class="esteban-proof-caption">VIP Coach dashboard updates</p>
@@ -1723,7 +1792,7 @@
               <div class="testimonial-video-card"><iframe
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen="" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
-                  src="https://www.youtube.com/embed/GB4icRfHkXo?rel=0&start=22" title="Organick testimonial video"></iframe></div>
+                  src="https://www.youtube.com/embed/GB4icRfHkXo?rel=0&start=22" title="Aisiah testimonial video"></iframe></div>
               <p class="testimonial-video-caption"><strong>Aisiah</strong></p>
             </div>
         </div>
@@ -1780,55 +1849,56 @@
       </div>
       <div class="guarantee-wrap reveal">
         <div class="guarantee-card">
-          <div class="g-pill">90 day guarantee</div>
+          <div class="g-pill">90-day guarantee</div>
           <div class="g-title">Hit a meaningful first milestone in 90 days<br />or reduce risk with our structured
             guarantee</div>
           <p class="g-text">This is a performance-based guarantee: if you complete the MDM implementation steps, follow
             the weekly action plan, and communicate your progress consistently, and you still do not hit a meaningful
-            first milestone in 90 days, support terms apply to evaluate a structured partial refund path.</p>
+            first milestone in 90 days, support terms apply to evaluate a structured partial refund review. Results vary
+            and depend on consistent effort, execution, and market conditions.</p>
         </div>
       </div>
       <div class="content reveal">
         <h2 class="section-title">Questions you may still have<br />about MDM</h2>
       </div>
       <div class="obj-wrap reveal">
-        <div class="oitem">
-          <div class="ohead" onclick="tog(this)"><span class="oq">Will this feel too advanced for me?</span><span
-              class="otoggle">+</span></div>
-          <div class="obody">
+          <div class="oitem">
+            <button type="button" aria-controls="faq-1" aria-expanded="false" class="ohead" onclick="tog(this)"><span
+                class="oq">Will this feel too advanced for me?</span><span class="otoggle">+</span></button>
+          <div class="obody" id="faq-1">
             <p class="oa">No. MDM starts with your current baseline and builds a clean stack of one system at a time. We
               focus on execution clarity first, then scale by adding layers.</p>
           </div>
         </div>
-        <div class="oitem">
-          <div class="ohead" onclick="tog(this)"><span class="oq">What exactly are the deliverables?</span><span
-              class="otoggle">+</span></div>
-          <div class="obody">
+          <div class="oitem">
+            <button type="button" aria-controls="faq-2" aria-expanded="false" class="ohead" onclick="tog(this)"><span
+                class="oq">What exactly are the deliverables?</span><span class="otoggle">+</span></button>
+          <div class="obody" id="faq-2">
             <p class="oa">MDM includes strategy sessions, a launch blueprint, content cadence framework, and hands-on
               implementation support so you can apply the process consistently.</p>
           </div>
         </div>
-        <div class="oitem">
-          <div class="ohead" onclick="tog(this)"><span class="oq">What if the product you pick doesn't work for
-              me?</span><span class="otoggle">+</span></div>
-          <div class="obody">
+          <div class="oitem">
+            <button type="button" aria-controls="faq-3" aria-expanded="false" class="ohead" onclick="tog(this)"><span
+                class="oq">What if the product you pick doesn't work for me?</span><span class="otoggle">+</span></button>
+          <div class="obody" id="faq-3">
             <p class="oa">If execution and reporting are completed as designed, the team adjusts offers and funnels with
               you. The framework is built to optimize, not rely on guesswork.</p>
           </div>
         </div>
-        <div class="oitem">
-          <div class="ohead" onclick="tog(this)"><span class="oq">Is this only for one niche?</span><span
-              class="otoggle">+</span></div>
-          <div class="obody">
+          <div class="oitem">
+            <button type="button" aria-controls="faq-4" aria-expanded="false" class="ohead" onclick="tog(this)"><span class="oq">Is
+                this only for one niche?</span><span class="otoggle">+</span></button>
+          <div class="obody" id="faq-4">
             <p class="oa">No. The process maps to dropshipping, creator-led stores, supplements, and any
               direct-to-consumer offer where demand can be tested and refined quickly.</p>
           </div>
         </div>
-        <div class="oitem">
-          <div class="ohead" onclick="tog(this)"><span class="oq">How much time should I expect weekly?</span><span
-              class="otoggle">+</span></div>
-          <div class="obody">
-            <p class="oa">Most teams can start with 5 to 8 hours per week for the first month and then shift to steady
+          <div class="oitem">
+            <button type="button" aria-controls="faq-5" aria-expanded="false" class="ohead" onclick="tog(this)"><span
+                class="oq">How much time should I expect weekly?</span><span class="otoggle">+</span></button>
+          <div class="obody" id="faq-5">
+            <p class="oa">Most students can start with 5 to 8 hours per week for the first month and then shift to steady
               execution cadence once your system is running.</p>
           </div>
         </div>
@@ -1836,50 +1906,55 @@
       <div class="cta-wrap reveal" id="apply">
         <div class="cta-h">You've seen the process<br />Now let's build your <span class="accent">AI Organic Dropshipping
             momentum</span></div>
-        <p class="cta-sub">Send your details below and we'll text a specialist at <strong>+1 (504) 405-9406</strong> to
+        <p class="cta-sub">Send your details below and we'll text a specialist at <strong>+1 (313) 632-0013</strong> to
           book your strategy session.</p>
         <form class="mdm-form" id="mdm-lead-form" name="mdm-lead-form">
           <div class="mdm-form-grid">
             <div class="mdm-form-group">
               <label class="mdm-form-label" for="mdm-name">Full name</label>
-              <input class="mdm-form-input" id="mdm-name" name="name" required type="text" />
+              <input autocomplete="name" class="mdm-form-input" id="mdm-name" maxlength="80" name="name" required
+                type="text" />
             </div>
             <div class="mdm-form-group">
               <label class="mdm-form-label" for="mdm-email">Email</label>
-              <input class="mdm-form-input" id="mdm-email" name="email" required type="email" />
+              <input autocomplete="email" class="mdm-form-input" id="mdm-email" inputmode="email" name="email"
+                required type="email" />
             </div>
               <div class="mdm-form-group">
                 <label class="mdm-form-label" for="mdm-phone">Phone number</label>
-                <input class="mdm-form-input" id="mdm-phone" name="phone" required type="tel" />
+                <input autocomplete="tel" class="mdm-form-input" id="mdm-phone" inputmode="tel" maxlength="24"
+                  name="phone" pattern="[0-9+\-()\s]{7,}" required type="tel" />
               </div>
               <div class="mdm-form-group full">
                 <label class="mdm-form-label" for="mdm-goals">Tell us about yourself.</label>
-                <textarea class="mdm-form-textarea" id="mdm-goals" name="goals"
-                  placeholder="What are your current goals, budget, and timeline?" rows="4"></textarea>
+                <textarea autocomplete="off" class="mdm-form-textarea" id="mdm-goals" maxlength="1500" name="goals"
+                  placeholder="What are your goals, budget, and timeline?" rows="4"></textarea>
             </div>
           </div>
           <button class="cta-btn mdm-form-submit" type="submit">Send to MDM via text</button>
-          <p class="mdm-form-note">Submitting opens your messaging app with a pre-filled message to +1 (504) 405-9406.
-          </p>
+          <p class="mdm-form-note" id="mdm-form-note">Submitting opens your messaging app with a pre-filled message to +1 (313) 632-0013.</p>
         </form>
       </div>
     </div>
+    </main>
     <footer>
       <div class="footer-row">
         <div class="footer-brand">
-          <img alt="MDM" class="footer-logo-img" src="assets/images/Logo.jpg" />
+          <img alt="MDM" class="footer-logo-img" height="26" src="assets/images/Logo.jpg" width="26" />
           <div class="footer-brand-copy">
             <span class="footer-logo">MDM</span>
-            <p class="footer-brand-note">MDM is a group of Ecom professionals that specialize in AI organic dropshipping,
-              scaling systems, and AI ecommerce execution for growing stores.</p>
+            <p class="footer-brand-note">MDM is a group of ecommerce professionals that specialize in AI organic
+              dropshipping, scaling systems, and AI ecommerce execution for growing stores.</p>
             <span class="footer-copy">© 2026</span>
           </div>
         </div>
         <div class="footer-links-wrap">
           <p class="footer-links-title">Follow MDM</p>
           <div class="footer-social-wrap">
-            <a href="https://www.instagram.com/join.mdm/" rel="noreferrer" target="_blank">Instagram — join.mdm</a>
-            <a href="https://www.youtube.com/@MillionDollarMovez" rel="noreferrer" target="_blank">Case Study YouTube</a>
+            <a href="https://www.instagram.com/join.mdm/" rel="noopener noreferrer" target="_blank">Instagram —
+              join.mdm</a>
+            <a href="https://www.youtube.com/@MillionDollarMovez" rel="noopener noreferrer" target="_blank">Case Study
+              YouTube</a>
           </div>
           <p class="footer-links-title">Legal</p>
           <div class="footer-legal">
@@ -1894,7 +1969,7 @@
       aria-label="Testimonial image preview">
       <span class="testimonial-image-modal-backdrop" id="testimonial-image-backdrop"></span>
       <button class="testimonial-image-close" id="testimonial-image-close" aria-label="Close image preview">×</button>
-      <img alt="" id="testimonial-modal-image" src="" />
+      <img alt="" id="testimonial-modal-image" height="1000" src="" width="1200" />
     </div>
 
     <script>
@@ -2096,15 +2171,46 @@
       (function () {
         var form = document.getElementById('mdm-lead-form');
         if (!form) return;
+        var formNote = document.getElementById('mdm-form-note');
+        var defaultNote = 'Submitting opens your messaging app with a pre-filled message to +1 (313) 632-0013.';
 
         form.addEventListener('submit', function (e) {
           e.preventDefault();
+          var submitButton = form.querySelector('.mdm-form-submit');
+          if (formNote) {
+            formNote.textContent = defaultNote;
+          }
           var payload = {
             name: (form.name.value || '').trim(),
             email: (form.email.value || '').trim(),
             phone: (form.phone.value || '').trim(),
             goals: (form.goals.value || '').trim()
           };
+
+          var phoneDigits = payload.phone.replace(/[^0-9]/g, '');
+          if (!phoneDigits || phoneDigits.length < 7) {
+            form.phone.focus();
+            if (formNote) {
+              formNote.textContent = 'Please enter a valid phone number so we can text you directly.';
+            }
+            return;
+          }
+
+          if (!payload.name) {
+            form.name.focus();
+            if (formNote) {
+              formNote.textContent = 'Please tell us your full name.';
+            }
+            return;
+          }
+
+          if (!payload.email) {
+            form.email.focus();
+            if (formNote) {
+              formNote.textContent = 'A valid email helps us send you the right onboarding details.';
+            }
+            return;
+          }
 
           var details = [
             'New MDM lead from landing page',
@@ -2118,7 +2224,19 @@
           if (typeof window.track === 'function') {
             window.track('form_submit');
           }
-          window.location.href = 'sms:+15044059406?body=' + smsBody;
+
+          if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Opening messaging app...';
+          }
+          window.location.href = 'sms:+13136320013?body=' + smsBody;
+
+          if (submitButton) {
+            setTimeout(function () {
+              submitButton.disabled = false;
+              submitButton.textContent = 'Send to MDM via text';
+            }, 1800);
+          }
         });
       })();
     </script>
@@ -2126,16 +2244,28 @@
         function tog(h) {
           const item = h.parentElement;
           const body = item.querySelector('.obody');
-        const open = item.classList.contains('open');
-        document.querySelectorAll('.oitem').forEach(i => {
-          i.classList.remove('open');
-          i.querySelector('.obody').style.maxHeight = '0';
-        });
-        if (!open) {
-          item.classList.add('open');
-          body.style.maxHeight = body.scrollHeight + 'px';
+          const open = item.classList.contains('open');
+
+          document.querySelectorAll('.oitem').forEach(i => {
+            const panel = i.querySelector('.obody');
+            const question = i.querySelector('.ohead');
+            i.classList.remove('open');
+            if (panel) {
+              panel.style.maxHeight = '0';
+            }
+            if (question) {
+              question.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          if (!open) {
+            item.classList.add('open');
+            if (body) {
+              body.style.maxHeight = body.scrollHeight + 'px';
+            }
+            h.setAttribute('aria-expanded', 'true');
+          }
         }
-      }
       const obs = new IntersectionObserver(es => {
         es.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
       }, { threshold: .08 });
