@@ -1049,6 +1049,44 @@
       resize: vertical;
     }
 
+    .mdm-recipient-choice {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .mdm-recipient-option {
+      position: relative;
+    }
+
+    .mdm-recipient-option input {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .mdm-recipient-option span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 12px;
+      background: rgba(10, 18, 36, 0.46);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      transition: border-color .2s, background .2s, box-shadow .2s;
+    }
+
+    .mdm-recipient-option input:focus-visible + span,
+    .mdm-recipient-option input:checked + span {
+      border-color: rgba(0, 245, 255, 0.75);
+      background: rgba(0, 245, 255, 0.12);
+      box-shadow: 0 0 0 2px rgba(0, 245, 255, 0.15);
+    }
+
     .mdm-form-submit {
       margin-top: 8px;
       width: 100%;
@@ -1910,7 +1948,7 @@
       <div class="cta-wrap reveal" id="apply">
         <div class="cta-h">You've seen the process<br />Now let's build your <span class="accent">AI Organic Dropshipping
             momentum</span></div>
-        <p class="cta-sub">Send your details below and we'll text a specialist at <strong>+1 (313) 632-0013</strong> to
+        <p class="cta-sub">Send your details below and we'll text <strong id="mdm-recipient-phone">your selected specialist</strong> to
           book your strategy session.</p>
         <form class="mdm-form" id="mdm-lead-form" name="mdm-lead-form">
           <div class="mdm-form-grid">
@@ -1934,9 +1972,22 @@
                 <textarea autocomplete="off" class="mdm-form-textarea" id="mdm-goals" maxlength="1500" name="goals"
                   placeholder="What are your goals, budget, and timeline?" rows="4"></textarea>
             </div>
+            <div class="mdm-form-group full" id="mdm-recipient-group">
+              <span class="mdm-form-label">Who should receive this lead?</span>
+              <div class="mdm-recipient-choice">
+                <label class="mdm-recipient-option">
+                  <input name="recipient" type="radio" value="mani" />
+                  <span>Mani</span>
+                </label>
+                <label class="mdm-recipient-option">
+                  <input name="recipient" type="radio" value="josep" />
+                  <span>Josep</span>
+                </label>
+              </div>
+            </div>
           </div>
           <button class="cta-btn mdm-form-submit" type="submit">Send to MDM via text</button>
-          <p class="mdm-form-note" id="mdm-form-note">Submitting opens your messaging app with a pre-filled message to +1 (313) 632-0013.</p>
+          <p class="mdm-form-note" id="mdm-form-note">Choose who should receive this lead, then submit to open your messaging app.</p>
         </form>
       </div>
     </main>
@@ -2175,24 +2226,102 @@
         var form = document.getElementById('mdm-lead-form');
         if (!form) return;
         var formNote = document.getElementById('mdm-form-note');
-        var defaultNote = 'Submitting opens your messaging app with a pre-filled message to +1 (313) 632-0013.';
+        var phoneDisplay = document.getElementById('mdm-recipient-phone');
+        var recipientGroup = document.getElementById('mdm-recipient-group');
+        var recipients = {
+          mani: {
+            name: 'Mani',
+            sms: '+13136320013',
+            display: '+1 (313) 632-0013'
+          },
+          josep: {
+            name: 'Josep',
+            sms: '+15044059406',
+            display: '+1 (504) 405-9406'
+          }
+        };
+
+        function normalizeRecipient(value) {
+          return (value || '').toLowerCase().trim().replace(/[^a-z0-9]/g, '');
+        }
+
+        function getRequestedRecipientKey() {
+          var params;
+          try {
+            params = new URLSearchParams(window.location.search);
+          } catch (e) {
+            return '';
+          }
+
+          var raw = params.get('rep') || params.get('recipient') || params.get('to') || params.get('specialist') || '';
+          var key = normalizeRecipient(raw);
+
+          if (key === 'hoesep' || key === 'joseph') {
+            key = 'josep';
+          }
+
+          return recipients[key] ? key : '';
+        }
+
+        function setSelectedRecipient(key) {
+          var recipient = recipients[key];
+          if (!recipient) return;
+
+          if (phoneDisplay) {
+            phoneDisplay.textContent = recipient.display;
+          }
+          if (formNote) {
+            formNote.textContent = 'Submitting opens your messaging app with a pre-filled message to ' + recipient.display + '.';
+          }
+        }
+
+        var requestedRecipientKey = getRequestedRecipientKey();
+        if (requestedRecipientKey) {
+          if (form.elements.recipient) {
+            form.elements.recipient.value = requestedRecipientKey;
+          }
+          if (recipientGroup) {
+            recipientGroup.hidden = true;
+          }
+          setSelectedRecipient(requestedRecipientKey);
+        } else if (formNote) {
+          formNote.textContent = 'Choose who should receive this lead, then submit to open your messaging app.';
+        }
+
+        if (form.elements.recipient) {
+          for (var i = 0; i < form.elements.recipient.length; i++) {
+            form.elements.recipient[i].addEventListener('change', function () {
+              setSelectedRecipient(normalizeRecipient(form.elements.recipient.value));
+            });
+          }
+        }
 
         form.addEventListener('submit', function (e) {
           e.preventDefault();
           var submitButton = form.querySelector('.mdm-form-submit');
-          if (formNote) {
-            formNote.textContent = defaultNote;
+          var fields = form.elements;
+          var selectedRecipientKey = normalizeRecipient(fields.recipient.value);
+          var recipient = recipients[selectedRecipientKey] || null;
+          if (!recipient) {
+            if (formNote) {
+              formNote.textContent = 'Please choose whether this lead should go to Mani or Josep.';
+            }
+            if (fields.recipient.length) {
+              fields.recipient[0].focus();
+            }
+            return;
           }
+          setSelectedRecipient(selectedRecipientKey);
           var payload = {
-            name: (form.name.value || '').trim(),
-            email: (form.email.value || '').trim(),
-            phone: (form.phone.value || '').trim(),
-            goals: (form.goals.value || '').trim()
+            name: (fields.name.value || '').trim(),
+            email: (fields.email.value || '').trim(),
+            phone: (fields.phone.value || '').trim(),
+            goals: (fields.goals.value || '').trim()
           };
 
           var phoneDigits = payload.phone.replace(/[^0-9]/g, '');
           if (!phoneDigits || phoneDigits.length < 7) {
-            form.phone.focus();
+            fields.phone.focus();
             if (formNote) {
               formNote.textContent = 'Please enter a valid phone number so we can text you directly.';
             }
@@ -2200,7 +2329,7 @@
           }
 
           if (!payload.name) {
-            form.name.focus();
+            fields.name.focus();
             if (formNote) {
               formNote.textContent = 'Please tell us your full name.';
             }
@@ -2208,7 +2337,7 @@
           }
 
           if (!payload.email) {
-            form.email.focus();
+            fields.email.focus();
             if (formNote) {
               formNote.textContent = 'A valid email helps us send you the right onboarding details.';
             }
@@ -2217,6 +2346,7 @@
 
           var details = [
             'New MDM lead from landing page',
+            'Routed to: ' + recipient.name,
             'Name: ' + payload.name,
             'Email: ' + payload.email,
             'Phone: ' + payload.phone,
@@ -2232,7 +2362,7 @@
             submitButton.disabled = true;
             submitButton.textContent = 'Opening messaging app...';
           }
-          window.location.href = 'sms:+13136320013?body=' + smsBody;
+          window.location.href = 'sms:' + recipient.sms + '?body=' + smsBody;
 
           if (submitButton) {
             setTimeout(function () {
